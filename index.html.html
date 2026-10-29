@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bilal Mohamed Hassan Ahmed - Software Engineering Student Portfolio">
+  <title>Bilal Mohamed | Portfolio</title>
+  <style>
+    :root {
+      --navy:#082653; --navy2:#0d3974; --blue:#2878d0; --pale:#edf4ff;
+      --white:#fff; --text:#142744; --muted:#65758e; --border:#d6e4f7;
+      --shadow:0 10px 30px rgba(8,38,83,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7faff;color:var(--text);line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1160px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(8,38,83,.97);color:#fff;box-shadow:0 4px 18px #08265322}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-size:1.35rem;font-weight:800;white-space:nowrap}.brand span{color:#8fc5ff}
+    nav{display:flex;gap:20px;flex-wrap:wrap}nav a{font-size:.94rem;color:#eef5ff}nav a:hover{color:#8fc5ff}
+    .hero{overflow:hidden;color:#fff;background:radial-gradient(circle at 82% 20%,#1b5798 0,transparent 32%),linear-gradient(125deg,#061a3a,#0a3268 65%,#14569c);padding:72px 0 64px;position:relative}
+    .hero:after{content:"</>";position:absolute;right:4%;bottom:-55px;font-size:clamp(8rem,20vw,17rem);font-weight:900;color:#ffffff0b;pointer-events:none}
+    .hero-content{position:relative;z-index:1;max-width:790px}
+    .eyebrow{color:#9dcfff;font-weight:700;letter-spacing:1px}
+    h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.2;margin:10px 0}
+    .hero h2{margin:0 0 16px;font-size:clamp(1.15rem,3vw,1.7rem);color:#d7e9ff;font-weight:500}
+    .hero p{max-width:650px;color:#e5efff;font-size:1.05rem}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:11px 18px;font-weight:700;cursor:pointer;font-size:.95rem}
+    .btn-light{background:#fff;color:var(--navy)}.btn-outline{border:1px solid #a8d0ff;color:#fff;background:transparent}
+    .btn-primary{background:var(--navy);color:#fff}.btn-soft{background:var(--pale);color:var(--navy)}
+    .btn:hover{transform:translateY(-1px);filter:brightness(.98)}
+    section{padding:42px 0;scroll-margin-top:85px}
+    .section-title{font-size:1.75rem;color:var(--navy);margin:0 0 7px}
+    .section-subtitle{color:var(--muted);margin:0 0 23px}
+    .grid{display:grid;gap:20px}.about-grid{grid-template-columns:1.25fr .75fr}
+    .card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:23px;box-shadow:var(--shadow)}
+    .card h3{color:var(--navy);margin:0 0 10px}
+    .about-mark{display:inline-grid;place-items:center;width:58px;height:58px;border-radius:17px;background:var(--pale);color:var(--navy2);font-size:1.8rem;margin-bottom:12px}
+    .facts{display:grid;gap:12px}.fact{padding:12px 14px;border-radius:12px;background:#f5f8ff}
+    .fact strong{color:var(--navy);display:block}
+    .skills{grid-template-columns:repeat(4,1fr)}
+    .skill{text-align:center;background:#fff;border:1px solid var(--border);border-radius:15px;padding:18px 8px;font-weight:700}
+    .skill span{display:block;font-size:1.8rem;margin-bottom:4px}
+    .assignments-top{display:flex;align-items:end;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .upload-box{border:2px dashed #9bbce8;border-radius:18px;background:#f0f6ff;padding:20px;margin:20px 0}
+    .upload-fields{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
+    label{display:block;color:var(--navy);font-weight:700;margin-bottom:5px;font-size:.9rem}
+    input{width:100%;border:1px solid #cbd9ed;border-radius:10px;padding:11px 12px;background:#fff;color:var(--text);font:inherit}
+    input[type=file]{padding:8px}
+    .small-note{font-size:.86rem;color:var(--muted);margin:12px 0 0}
+    .assignment-list{display:grid;gap:12px}
+    .assignment{display:flex;align-items:center;justify-content:space-between;gap:15px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:15px 17px}
+    .assignment-info{display:flex;gap:12px;align-items:center;min-width:0}
+    .file-icon{flex:0 0 43px;height:43px;display:grid;place-items:center;border-radius:12px;background:var(--pale);font-size:1.35rem}
+    .assignment h3{font-size:1rem;margin:0;color:var(--navy);overflow-wrap:anywhere}.assignment small{color:var(--muted)}
+    .assignment-actions{display:flex;gap:8px;flex-shrink:0}
+    .projects{grid-template-columns:repeat(3,1fr)}
+    .project-icon{font-size:2rem;background:linear-gradient(135deg,#eaf3ff,#cfe4ff);height:115px;display:grid;place-items:center;border-radius:13px;margin-bottom:15px}
+    .project p{color:var(--muted);margin:0}
+    .contact-grid{grid-template-columns:1fr 1fr}.contact-list{display:grid;gap:13px}
+    .contact-item{padding:13px;background:#f5f8ff;border-radius:12px;overflow-wrap:anywhere}
+    footer{background:#061a3a;color:#fff;padding:22px 0;text-align:center}footer span{color:#9dcfff}
+    .empty{text-align:center;color:var(--muted);background:#fff;padding:25px;border:1px dashed var(--border);border-radius:14px}
+    @media(max-width:800px){.nav{padding:13px 0;align-items:flex-start;flex-direction:column}nav{gap:12px}.about-grid,.contact-grid{grid-template-columns:1fr}.projects{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.upload-fields{grid-template-columns:1fr}.hero{padding:52px 0}}
+    @media(max-width:520px){nav a{font-size:.85rem}.assignment{align-items:flex-start;flex-direction:column}.assignment-actions{width:100%}.assignment-actions .btn{flex:1}.card{padding:18px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">Bilal <span>Portfolio</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#about">About Me</a><a href="#skills">Skills</a>
+      <a href="#assignments">Assignments</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="eyebrow">STUDENT PORTFOLIO</div>
+      <h1>Bilal Mohamed Hassan Ahmed</h1>
+      <h2>Software Engineering Student | Second Year</h2>
+      <p>Welcome to my personal portfolio. Here you can learn about me, explore the skills I am developing, and view the assignments and projects I work on during my studies.</p>
+      <div class="actions"><a class="btn btn-light" href="#assignments">📁 View Assignments</a><a class="btn btn-outline" href="#about">Learn More About Me</a></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">My academic background and interests.</p>
+      <div class="grid about-grid">
+        <article class="card">
+          <div class="about-mark">🎓</div>
+          <h3>Bilal Mohamed Hassan Ahmed</h3>
+          <p>I am a second-year student at the Faculty of Computers and Information, majoring in Software Engineering. I am interested in software development, web design, and problem-solving, and I aim to improve my skills through practice and hands-on projects.</p>
+        </article>
+        <div class="card facts">
+          <div class="fact"><strong>Faculty</strong>Faculty of Computers and Information</div>
+          <div class="fact"><strong>Department</strong>Software Engineering</div>
+          <div class="fact"><strong>Academic Year</strong>Second Year</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <p class="section-subtitle">Update this section to match the technologies you have actually studied.</p>
+      <div class="grid skills">
+        <div class="skill"><span>🌐</span>HTML</div><div class="skill"><span>🎨</span>CSS</div>
+        <div class="skill"><span>⚙️</span>JavaScript</div><div class="skill"><span>🐍</span>Python</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="assignments">
+    <div class="container">
+      <div class="assignments-top"><div><h2 class="section-title">My Assignments</h2><p class="section-subtitle">Add assignment files and display them in an organized list.</p></div></div>
+      <div class="upload-box">
+        <h3 style="margin-top:0;color:var(--navy)">➕ Add a New Assignment</h3>
+        <form id="assignmentForm">
+          <div class="upload-fields">
+            <div><label for="taskName">Assignment Title</label><input id="taskName" type="text" placeholder="e.g. HTML Assignment 1" required></div>
+            <div><label for="taskSubject">Course / Subject</label><input id="taskSubject" type="text" placeholder="e.g. Web Development" required></div>
+            <div><label for="taskFile">Choose File</label><input id="taskFile" type="file" required></div>
+          </div>
+          <button class="btn btn-primary" type="submit" style="margin-top:14px">Add Assignment</button>
+        </form>
+        <p class="small-note">Note: Files added here are only available in the current browser session. They are not uploaded to the internet and will not remain after you close or refresh the page.</p>
+      </div>
+      <div class="assignment-list" id="assignmentList"><div class="empty" id="emptyMessage">No assignments added yet. Use the form above to add your first assignment.</div></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <p class="section-subtitle">A place to showcase your academic and personal projects.</p>
+      <div class="grid projects">
+        <article class="card project"><div class="project-icon">💻</div><h3>Web Development Project</h3><p>Add a short description of the project, technologies used, and a preview link when available.</p></article>
+        <article class="card project"><div class="project-icon">🗃️</div><h3>Database Project</h3><p>Write a brief summary of the project idea and your role in it.</p></article>
+        <article class="card project"><div class="project-icon">🧠</div><h3>Programming Project</h3><p>Replace this example with one of your actual projects.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2><p class="section-subtitle">Add your real contact details before publishing the website.</p>
+      <div class="grid contact-grid">
+        <div class="card"><h3>Let's Connect!</h3><p>Feel free to reach out about assignments, projects, or collaboration opportunities.</p></div>
+        <div class="card contact-list">
+          <div class="contact-item">📧 Email: Add your email address here</div>
+          <div class="contact-item">🔗 GitHub: Add your GitHub profile link here</div>
+          <div class="contact-item">🎓 Faculty: Faculty of Computers and Information</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="container">© <span id="year"></span> Bilal Mohamed Hassan Ahmed — All Rights Reserved</div></footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const form = document.getElementById("assignmentForm");
+  const list = document.getElementById("assignmentList");
+  const emptyMessage = document.getElementById("emptyMessage");
+  const addedFiles = [];
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("taskName").value.trim();
+    const subject = document.getElementById("taskSubject").value.trim();
+    const fileInput = document.getElementById("taskFile");
+    const file = fileInput.files[0];
+    if (!name || !subject || !file) { alert("Please enter the assignment title, course, and choose a file."); return; }
+
+    const fileUrl = URL.createObjectURL(file);
+    addedFiles.push(fileUrl);
+    emptyMessage.style.display = "none";
+
+    const row = document.createElement("article"); row.className = "assignment";
+    const info = document.createElement("div"); info.className = "assignment-info";
+    const icon = document.createElement("div"); icon.className = "file-icon"; icon.textContent = "📄";
+    const textBox = document.createElement("div");
+    const title = document.createElement("h3"); title.textContent = name;
+    const details = document.createElement("small"); details.textContent = subject + " • " + file.name;
+    textBox.append(title, details); info.append(icon, textBox);
+
+    const actions = document.createElement("div"); actions.className = "assignment-actions";
+    const openLink = document.createElement("a"); openLink.className = "btn btn-soft"; openLink.href = fileUrl; openLink.target = "_blank"; openLink.rel = "noopener"; openLink.textContent = "Open File";
+    const downloadLink = document.createElement("a"); downloadLink.className = "btn btn-primary"; downloadLink.href = fileUrl; downloadLink.download = file.name; downloadLink.textContent = "Download";
+    actions.append(openLink, downloadLink); row.append(info, actions); list.prepend(row); form.reset();
+  });
+  window.addEventListener("beforeunload", () => addedFiles.forEach(url => URL.revokeObjectURL(url)));
+</script>
+</body>
+</html>
